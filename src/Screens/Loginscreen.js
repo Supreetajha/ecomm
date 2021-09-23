@@ -23,9 +23,9 @@ function Loginscreen({location,history}) {
 
     useEffect(()=>{
         if(userInfo){
-            history.push(`/`)
+            history.push(`/${redirect}`)
         }
-    },[userInfo])
+    },[userInfo,history,redirect])
 
     const handleLogin = (e) => {
         e.preventDefault()

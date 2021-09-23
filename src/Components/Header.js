@@ -6,6 +6,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton'
 import { LinkContainer} from 'react-router-bootstrap'
 import { useSelector,useDispatch } from 'react-redux'
 import {logout} from '../Actions/userActions'
+import SearchBox from './SearchBox'
 
 function Header({ history }) {
 
@@ -23,9 +24,10 @@ const handleLogout = () => {
                 <LinkContainer to="/" exact>
                     <Navbar.Brand href="/">Proshop</Navbar.Brand>
                 </LinkContainer>
-                
+                <SearchBox />
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
+                    
                 <Nav className="me-auto">
                     <LinkContainer to="/cart">
                         <Nav.Link><i className="fas fa-shopping-cart"></i>Cart</Nav.Link>
