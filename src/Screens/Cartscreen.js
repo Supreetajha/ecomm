@@ -17,11 +17,15 @@ function Cartscreen({match,location,history}) {
 
     const cart = useSelector(state => state.cart)
     const {cartItems} = cart
+    let totalItems = cartItems.reduce((acc, item) => acc + item.qty, 0)
+    let totalAmount = cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)
     
     useEffect(()=>{
         if(match.params.id){
             dispatch(addToCart(match.params.id,qty))
         }
+        totalItems = cartItems.reduce((acc, item) => acc + item.qty, 0)
+        totalAmount = cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)
     },[dispatch,match.params.id,qty])
 
     const handleRemoveFromCart = (id) => {
@@ -98,8 +102,8 @@ function Cartscreen({match,location,history}) {
             <Card>
                     <ListGroup variant='flush'>
                         <ListGroup.Item>
-                            <h3>Total ({cartItems.reduce((acc, item) => acc + item.qty, 0)}) items</h3>
-                            <h4>Amount &#8377;{cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}</h4>
+                            <h3>Total ({totalItems}) items</h3>
+                            <h4>Amount &#8377;{totalAmount}</h4>
                         </ListGroup.Item>
                    
 
