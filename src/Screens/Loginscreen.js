@@ -18,8 +18,7 @@ function Loginscreen({location,history}) {
     
     const userLogin = useSelector(state=>state.userLogin)
     const {loading,error,userInfo} = userLogin
-    const queryParams = new URLSearchParams(window.location.search);
-    const redirect = queryParams.get('redirect')
+    const redirect = location.search ? location.search.split('=')[1] : '/'
 
     useEffect(()=>{
         if(userInfo){

@@ -1,7 +1,7 @@
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-import { useState,useEffect } from 'react'
+import { useEffect } from 'react'
 import {useDispatch,useSelector} from 'react-redux'
 //My components
 import Product from '../Components/Product'

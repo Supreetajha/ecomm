@@ -30,11 +30,10 @@ function PlaceOrderscreen({ history }) {
 
     useEffect(() => {
         if (success) {
-            console.log(order._id)
             history.push(`/order/${order._id}`)
-            //dispatch({ type: ORDER_CREATE_RESET })
+            dispatch({ type: ORDER_CREATE_RESET })
         }
-    }, [success, history])
+    }, [success, history,dispatch,order._id])
 
 
     const placeOrder = () => {

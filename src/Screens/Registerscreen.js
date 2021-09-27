@@ -17,7 +17,6 @@ function Registerscreen({location,history}) {
     const [email,setEmail] = useState()
     const [password,setPassword] = useState()
     const [confirmPassword,setConfirmPassword] = useState()
-    const [message,setMessage] = useState()
 
     const dispatch = useDispatch()
     
@@ -28,7 +27,7 @@ function Registerscreen({location,history}) {
         if(userInfo){
             history.push("/")
         }
-    },[userInfo])
+    },[userInfo,history])
 
     const handleRegister = (e) => {
         e.preventDefault()

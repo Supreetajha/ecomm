@@ -1,5 +1,3 @@
-import {useEffect} from 'react'
-import {useDispatch,useSelector} from 'react-redux'
 import Carousel from 'react-bootstrap/Carousel'
 import Image from 'react-bootstrap/Image'
 

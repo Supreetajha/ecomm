@@ -44,7 +44,7 @@ function UserEditscreen({match,history}) {
             }
         }
 
-    },[dispatch,userId,user,successUpdate,history])
+    },[dispatch,userId,user,successUpdate,history,name])
 
     const handleEdit = (e) => {
         e.preventDefault()

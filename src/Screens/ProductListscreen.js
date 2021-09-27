@@ -10,7 +10,7 @@ import {useDispatch,useSelector} from 'react-redux'
 import Loader from '../Components/Loader'
 import Message from '../Components/Message'
 import { listProducts,deleteProduct,createProduct } from '../Actions/productActions'
-import {PRODUCT_DELETE_RESET,PRODUCT_CREATE_RESET} from '../Constants/productConstants'
+import {PRODUCT_CREATE_RESET} from '../Constants/productConstants'
 
 function ProductListscreen ({history}) {
     console.log("ProductList")
@@ -58,6 +58,10 @@ function ProductListscreen ({history}) {
                   : error? (<Message variant="danger">{error}</Message>)
                         : (
                             <div>
+                            {loadingDelete && <Loader />}
+                            {errorDelete && <Message variant="danger">{errorDelete}</Message>}
+                            {loadingCreate && <Loader />}
+                            {errorCreate && <Message variant="danger">{errorCreate}</Message>}
                             <Row className="justify-content-center">
                                 <Col md={10}>
                                  <h1>Products</h1>

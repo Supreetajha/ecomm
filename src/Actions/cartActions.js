@@ -5,7 +5,6 @@ import axios from 'axios'
 import {
     CART_ADD_ITEM,
     CART_REMOVE_ITEM,
-    CART_CLEAR_ITEMS,
 
     CART_SAVE_SHIPPING_ADDRESS,
     CART_SAVE_PAYMENT_METHOD,
@@ -15,7 +14,7 @@ export const addToCart = (id,qty) => async(dispatch,getState) => {
     try{
         const {data} = await axios.get(`/api/products/${id}/`)
         const item  = {
-                         product : id,
+                         product : data._id,
                          name: data.name,
                          image: data.image,
                          price: data.price,

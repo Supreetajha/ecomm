@@ -7,7 +7,7 @@
     import Col from 'react-bootstrap/Col'
     import Table from 'react-bootstrap/Table'
     import { LinkContainer } from 'react-router-bootstrap'
-    import { Link } from 'react-router-dom'
+
     //My components
     
     import {getUserDetails,updateUserProfile} from '../Actions/userActions'

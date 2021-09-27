@@ -57,7 +57,7 @@ function ProductEditscreen({match,history}) {
         }
 
 
-    },[dispatch,productId,newProduct,successUpdate])
+    },[dispatch,productId,newProduct,successUpdate,history,name])
 
     const handleEdit = (e) => {
         e.preventDefault()
