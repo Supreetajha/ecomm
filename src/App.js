@@ -1,5 +1,5 @@
 import Container from 'react-bootstrap/Container'
-import { BrowserRouter,Route } from 'react-router-dom'
+import { HashRouter, Route } from 'react-router-dom'
 //My components
 import Header from './Components/Header'
 import Footer from './Components/Footer'
@@ -23,33 +23,33 @@ import OrderListscreen from './Screens/OrderListscreen'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header />
-      <main className ="py-3">
+      <main className="py-3">
         <Container>
-          <Route path="/" component={Homescreen} exact/>
-          <Route path="/product/:id" component = {Productscreen} />
-          <Route path="/cart/:id?" component = {Cartscreen} />
-          <Route path="/login" component = {Loginscreen} />
-          <Route path="/register" component = {Registerscreen} />
-          <Route path="/profile" component = {Profilescreen} />
-          <Route path="/shipping" component = {Shippingscreen} />
-          <Route path="/payment" component = {Paymentscreen} />
-          <Route path="/placeorder" component = {PlaceOrderscreen} />
-          <Route path="/order/:id?" component = {Orderscreen} />
+          <Route path="/" component={Homescreen} exact />
+          <Route path="/product/:id" component={Productscreen} />
+          <Route path="/cart/:id?" component={Cartscreen} />
+          <Route path="/login" component={Loginscreen} />
+          <Route path="/register" component={Registerscreen} />
+          <Route path="/profile" component={Profilescreen} />
+          <Route path="/shipping" component={Shippingscreen} />
+          <Route path="/payment" component={Paymentscreen} />
+          <Route path="/placeorder" component={PlaceOrderscreen} />
+          <Route path="/order/:id?" component={Orderscreen} />
 
-          <Route path="/admin/userlist" component = {UserListscreen} />
-          <Route path="/admin/user/:id/edit" component = {UserEditscreen} />
+          <Route path="/admin/userlist" component={UserListscreen} />
+          <Route path="/admin/user/:id/edit" component={UserEditscreen} />
 
-          <Route path="/admin/productlist" component = {ProductListscreen} />
-          <Route path="/admin/product/:id/edit" component = {ProductEditscreen} />
+          <Route path="/admin/productlist" component={ProductListscreen} />
+          <Route path="/admin/product/:id/edit" component={ProductEditscreen} />
 
-          <Route path="/admin/orderlist" component = {OrderListscreen} />
+          <Route path="/admin/orderlist" component={OrderListscreen} />
 
         </Container>
       </main>
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
